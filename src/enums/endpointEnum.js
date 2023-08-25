@@ -1,4 +1,4 @@
-export default {
+const endpoints = Object.freeze({
   // roles
   rolesGet: '/roles',
   rolesPut: (id) => `/roles/${id}`,
@@ -10,4 +10,6 @@ export default {
   loginPost: '/login',
   registerPost: '/register',
   logoutPost: '/logout',
-};
+});
+
+export default endpoints;

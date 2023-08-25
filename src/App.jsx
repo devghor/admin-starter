@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 import { Toaster } from 'react-hot-toast';
 import { MuiThemeProvider } from './theme';
 import Router from './router';
-import store from './app/store';
+import store from './store';
 
 function App() {
   return (

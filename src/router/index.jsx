@@ -3,11 +3,11 @@ import Guard from './Guard';
 import DashboardLayout from '../components/layout/dashboard/DashboardLayout';
 import ErrorPage from '../components/page/ErrorPage';
 import { Home } from '../pages/home';
-import { pathConstant } from '../constants';
 import { Permissions, Roles } from '../pages/acl';
 import AuthLayout from '../components/layout/auth/AuthLayout';
 import { Login, Register } from '../pages/auth';
 import NotFoundPage from '../components/page/NotFoundPage';
+import { pathEnum } from '../enums';
 
 const router = createBrowserRouter([
   {
@@ -24,11 +24,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: pathConstant.ACL_ROLES.path,
+        path: pathEnum.acl.roles.path,
         element: <Roles />,
       },
       {
-        path: pathConstant.ACL_PERMISSIONS.path,
+        path: pathEnum.acl.permissions.path,
         element: <Permissions />,
       },
     ],
@@ -39,11 +39,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: pathConstant.AUTH_REGISTER.path,
+        path: pathEnum.auth.register.path,
         element: <Register />,
       },
       {
-        path: pathConstant.AUTH_REGISTER.path,
+        path: pathEnum.auth.register.path,
         element: <Login />,
       },
     ],

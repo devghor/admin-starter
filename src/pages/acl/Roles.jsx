@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Button, Grid } from '@mui/material';
 import { PageHeader } from '../../components/ui/page/PageHeader';
-import { pathConstant } from '../../constants';
 import { AdvanceDataTable } from '../../components/ui/table';
 import { httpClient } from '../../lib';
+import { pathEnum } from '../../enums';
 
 function Roles() {
   const [data, setData] = useState([]);
@@ -53,11 +53,7 @@ function Roles() {
 
   return (
     <>
-      <PageHeader
-        title="Roles"
-        paths={[pathConstant.HOME, pathConstant.ACL_ROLES]}
-        rightSection={<Button>Add</Button>}
-      />
+      <PageHeader title="Roles" paths={[pathEnum.home, pathEnum.acl.roles]} rightSection={<Button>Add</Button>} />
       <div>
         <Grid container>
           <Grid item md={12}>

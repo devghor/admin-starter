@@ -22,7 +22,7 @@ export default function DashboardLayout(props) {
     <div>
       <MuiToolbar>
         <Box component="h4" sx={{ textAlign: 'center', width: '100%' }}>
-          ADMIN NOW
+          ADMIN STARTER
         </Box>
       </MuiToolbar>
       <Divider />

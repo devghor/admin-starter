@@ -1,16 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 import { httpClient } from '../lib';
-import { appConstant, endpointConstant } from '../constants';
+import { appConfig } from '../config';
+import { endpointEnum } from '../enums';
 
 function useAuth() {
   const navigate = useNavigate();
 
   const signIn = async (values) => {
     try {
-      const resp = await httpClient.post(endpointConstant.loginPost, values);
+      const resp = await httpClient.post(endpointEnum.loginPost, values);
       if (resp.data) {
-        const redirectUrl = appConstant.redirectUrlKey;
-        navigate(redirectUrl || appConstant.authenticatedEntryPath);
+        const redirectUrl = appConfig.redirectUrlKey;
+        navigate(redirectUrl || appConfig.authenticatedEntryPath);
         return {
           status: 'success',
           message: '',
@@ -26,10 +27,10 @@ function useAuth() {
 
   const signUp = async (values) => {
     try {
-      const resp = await httpClient.post(endpointConstant.registerPost, values);
+      const resp = await httpClient.post(endpointEnum.registerPost, values);
       if (resp.data) {
-        const redirectUrl = appConstant.redirectUrlKey;
-        navigate(redirectUrl || appConstant.authenticatedEntryPath);
+        const redirectUrl = appConfig.redirectUrlKey;
+        navigate(redirectUrl || appConfig.authenticatedEntryPath);
         return {
           status: 'success',
           message: '',
@@ -44,11 +45,11 @@ function useAuth() {
   };
 
   const handleSignOut = () => {
-    navigate(appConstant.unAuthenticatedEntryPath);
+    navigate(appConfig.unAuthenticatedEntryPath);
   };
 
   const signOut = async () => {
-    await httpClient.post(endpointConstant.logoutPost);
+    await httpClient.post(endpointEnum.logoutPost);
     handleSignOut();
   };
 

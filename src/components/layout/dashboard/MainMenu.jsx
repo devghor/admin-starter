@@ -8,12 +8,12 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { DashboardOutlined, ListAltOutlined, StarOutline } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import { pathConstant } from '../../../constants';
+import { pathEnum } from '../../../enums';
 
 const items = [
   {
     icon: <DashboardOutlined sx={{ color: '#fff' }} />,
-    ...pathConstant.DASHBOARD,
+    ...pathEnum.dashboard,
   },
   {
     icon: <ListAltOutlined sx={{ color: '#fff' }} />,
@@ -22,15 +22,15 @@ const items = [
     sub: [
       {
         icon: <StarOutline sx={{ color: '#fff' }} />,
-        ...pathConstant.ACL_ROLES,
+        ...pathEnum.acl.roles,
       },
       {
         icon: <StarOutline sx={{ color: '#fff' }} />,
-        ...pathConstant.ACL_USER_ROLES,
+        ...pathEnum.acl.userRoles,
       },
       {
         icon: <StarOutline sx={{ color: '#fff' }} />,
-        ...pathConstant.ACL_PERMISSIONS,
+        ...pathEnum.acl.permissions,
       },
     ],
   },

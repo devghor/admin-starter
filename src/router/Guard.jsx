@@ -1,7 +1,7 @@
 function Guard({ children }) {
   // const { authenticated } = useAuth();
   // if (!authenticated) {
-  // return <Navigate to={pathConstant.AUTH_LOGIN.path} />;
+  // return <Navigate to={pathEnum.auth.login.path} />;
   // }
   return <div>{children}</div>;
 }

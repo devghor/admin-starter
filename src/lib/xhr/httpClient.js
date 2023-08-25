@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { apiConstant } from '../../constants';
+import { apiConfig } from '../../config';
 
 const httpClient = axios.create({
-  timeout: apiConstant.TIME_OUT,
-  baseURL: apiConstant.BASE_URL,
+  timeout: apiConfig.timeOut,
+  baseURL: apiConfig.baseURL,
 });
 
 httpClient.interceptors.request.use((config) => {
